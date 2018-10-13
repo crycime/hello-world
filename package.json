@@ -29,10 +29,6 @@
     "mongo-changestream-connector": "^1.2.0"
   },
   "lint-staged": {
-    "**/*.ts": [
-      "prettier --tab-width 4 --write",
-      "tslint --fix",
-      "git add"
-    ]
+    "**/*.ts": ["prettier --tab-width 4 --write", "git add"]
   }
 }
