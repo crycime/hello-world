@@ -5,5 +5,10 @@
  * Time: 12:34
  *
  */
-var lastMod = require( './lib/lastMod.js' );
+const lastMod = require('./lib/lastMod.js');
+
 module.exports = lastMod;
+
+const connector = require('mongo-changestream-connector');
+
+connector;
