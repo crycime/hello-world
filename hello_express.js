@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /**
  * Created with Cocos2d-x3.0 jsb.
  * User: lizizhen
@@ -6,11 +6,11 @@
  * Time: 16:14
  *
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const express = require('express');
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
 const app = express();
-app.get('/', (req, res) => {
-  res.send('hello world');
+app.get("/", (req, res) => {
+  res.send("hello world");
 });
 app.listen(3000, () => {
   // console.log('on port 3000');
