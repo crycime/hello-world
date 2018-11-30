@@ -10,8 +10,17 @@ import { Connection } from "amqplib";
  */
 export default class ConnectionUtil {
   public static async getConnection(): Promise<Connection> {
-    // const conn = await amqp.connect('amqp://admin:123456@locahost');
-    const conn = await amqp.connect("amqp://localhost");
+    // const conn = await amqp.connect('amqp://locahost');
+    const conn = await amqp.connect({
+      protocol: "amqp",
+      hostname: "localhost",
+      port: 5673,
+      username: "admin",
+      password: "123456",
+      locale: "en_US",
+      heartbeat: 0,
+      vhost: "/admin"
+    });
     return conn;
   }
 }
