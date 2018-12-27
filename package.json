@@ -1,5 +1,5 @@
 {
-  "name": "ptah-encryption",
+  "name": "hello",
   "version": "1.0.3",
   "description": "",
   "main": "index.js",
@@ -24,10 +24,20 @@
   },
   "dependencies": {
     "@types/amqplib": "^0.5.8",
+    "@types/express": "^4.16.0",
+    "@types/lodash": "^4.14.119",
+    "@types/mongoose": "^5.3.4",
     "amqplib": "^0.5.2",
     "express": "^4.16.3",
+    "fi-gridfs": "^1.1.1",
+    "gridfs-store": "^1.0.6",
+    "gridfs-stream": "^1.1.1",
+    "joi": "^14.3.0",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "mongo-changestream-connector": "^1.2.0"
+    "mongo-changestream-connector": "^1.2.0",
+    "mongoose": "^5.1.8",
+    "ptah-encryption": "^1.0.5"
   },
   "lint-staged": {
     "*.js": [

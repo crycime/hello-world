@@ -5,7 +5,7 @@
  * Time: 14:07
  *
  */
-import ConnectionUtil from "../util/connectionUtil.js";
+import ConnectionUtil from "../util/connectionUtil1.js";
 
 class Send {
   public static async main(): Promise<void> {

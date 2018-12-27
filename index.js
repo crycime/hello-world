@@ -5,8 +5,22 @@
  * Time: 12:34
  *
  */
-const lastMod = require('./lib/lastMod.js');
+const lodash = require("lodash");
+const mongoose = require("mongoose");
 
-module.exports = lastMod;
+let a = [
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e91"), name: "c" },
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e95"), name: "c" },
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e94"), name: "c" }
+];
 
-//lizizhen
+let b = [
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e91"), name: "c" },
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e92"), name: "c" },
+  { id: mongoose.Types.ObjectId("5c1216e3c8f8db1b646a1e93"), name: "c" }
+];
+
+const database = lodash.differenceWith(a, b, (t1, t2) => {
+  return t1.id + "" === t2.id + "";
+});
+console.log(database);
