@@ -6,7 +6,7 @@
  *
  */
 
-const Joi = require("joi");
+const Joi = require('joi');
 
 // let testData = {username:'adf',test1:'111111', arraySelect:['My string',1] };
 //
@@ -35,7 +35,7 @@ const Joi = require("joi");
 //
 // let { error, value } = Joi.validate(testData, paramSchema, { allowUnknown: true, abortEarly: true });
 // console.log(error, value);
-
+//
 // const schema = {
 //   a: Joi.valid('a', 'b', 'other'),
 //   other: Joi.string()
@@ -44,16 +44,30 @@ const Joi = require("joi");
 //
 // let { error, value } = Joi.validate({a:'a',other:'lll'}, schema, { allowUnknown: true, abortEarly: true });
 // console.log(error, value);
+//
+// const schema = Joi.object().keys({
+//   a: Joi.string().default(Joi.ref("b.c")),
+//   b: {
+//     c: Joi.any()
+//   },
+//   c: Joi.ref("$x")
+// });
+//
+// let { error, value } = Joi.validate({ b: { c: 5 } }, schema);
+// console.log(error, value);
 
-const schema = Joi.object().keys({
-  a: Joi.string().default(Joi.ref("b.c")),
-  b: {
-    c: Joi.any()
-  },
-  c: Joi.ref("$x")
+let testData = { accessMethods: { startTime: 'blue', endTime: 'sss' } };
+
+let paramSchema = Joi.object().keys({
+    accessMethods: {
+        startTime: Joi.string(),
+        endTime: Joi.when(Joi.ref('startTime'), { is: 'blue', then: Joi.string().required() })
+    },
+    // workShift:Joi.string().default(Joi.ref("accessMethods.startTime"))
+    regsite: {
+        workShift: Joi.when('bl', { is: 'blue', then: Joi.string().required() })
+    }
 });
 
-let { error, value } = Joi.validate({ b: { c: 6 } }, schema, {
-  context: { x: 5 }
-});
+let { error, value } = Joi.validate(testData, paramSchema, { allowUnknown: true, abortEarly: true });
 console.log(error, value);
