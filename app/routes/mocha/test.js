@@ -11,6 +11,7 @@ const router = express.Router();
 
 router.route("/");
 
-console.log('test')
+console.log('dev')
+console.log('dev')
 
 module.exports = router;
