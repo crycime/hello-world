@@ -9,6 +9,7 @@
 const express = require("express");
 const router = express.Router();
 
+console.log('master')
 router.route("/");
 
 module.exports = router;
