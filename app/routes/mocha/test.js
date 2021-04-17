@@ -9,9 +9,9 @@
 const express = require("express");
 const router = express.Router();
 
+console.log('master')
 router.route("/");
 
-console.log('dev')
-console.log('dev')
+console.log('master')
 
 module.exports = router;
